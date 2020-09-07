@@ -1,0 +1,68 @@
+body {
+    background-color: @white !important;
+}
+
+.buttons {
+    display: flex;
+    margin-top: 3rem;
+
+    .buttonLink + .buttonLink {
+      margin-left: 16px;
+    }
+
+    &.center {
+        justify-content: center;
+    }
+}
+
+.buttonLink {
+    cursor: pointer;
+    border-radius: 1rem;
+    min-width: 134px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    transition: all 0.3s;
+    color: @white;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 40px;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(
+        60deg,
+        fade(@orange, 80%),
+        @orange
+    );
+
+    &:hover {
+        opacity: 0.8;
+        background-color: fade(@orange, 5%);
+        color: @white;
+    }
+}
+
+
+
+@media (max-width: 900px) {
+    .buttons {
+        display: inline-flex;
+    }
+}
+  
+@media (max-width: 786px) {
+    .buttons {
+        flex-direction: column;
+        margin-top: 2rem;
+        .buttonLink + .buttonLink {
+            margin-top: 1rem;
+            margin-left: 0;
+        }
+    }
+}
+  
+@media (max-width: 480px) {
+    .buttons {
+        width: 80%;
+        justify-content: center;
+    }
+}
